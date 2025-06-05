@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- alt：图片显示不出来时所展示的信息 -->
+    <img src="Ultraman.jpg" alt="Ultraman Tiga" width="500">
+
+    <!--
+         这里 src 涉及到路径问题：相对路径 / 绝对路径。
+         相对路径：
+            1. ./：表示当前目录（可以省略不写）
+            2. ../：表示上级目录
+        绝对路径
+    -->
+
+    <!-- 
+        图片格式非常多，下面是常用的：
+            1. jpg：有损压缩格式，将肉眼观察不出来的细节丢弃了
+            2. png：无损压缩格式（想让图片有透明的背景 或者 想要更高质量的呈现照片）
+            3. gif：动态图，仅支持 256 种颜色，色彩呈现不完整
+            4. bmp：不进行压缩的一种格式，在最大程度上保留图片更多的细节，占用空间极大
+            5. webp：谷歌推出的一种格式，兼容性不太好，专门用于在网页中呈现图片，使用场景：网页中的各种图片
+            6. base64：将图片进行 base64 编码，形成一串文本，可以直接作为 img 标签的 src 属性值且不受文件位置的影响，适用于一些较小的图片或者需要和网页一起加载的图片
+    -->
+</body>
+
+</html>
