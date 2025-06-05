@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 常用的文本标签： 相比于排版标签的宏观例如大段的文字，文本标签更加微观例如词汇、短语-->
+    <!-- 文本标签通常是行内元素 -->
+    <!-- em 标签语义：要着重阅读的内容 -->
+    <!-- strong 标签语义：十分重要的内容，语气比 em 更强 -->
+    <!-- span 标签没有语义，用于包裹短语的通用容器，div 是大包装袋，span 是小包装袋，为了可以用 css 去打扮它，特殊对待 -->
+    <p>
+        FBI Warning:<em>Biu~Biu~Biu~</em>
+        <strong>When you leave the room, please close the door.</strong>
+        Three major frameworks:<span>Vue, Angular, React</span>
+    </p>
+    <!-- 
+        不常用的文本标签： 
+            1. cite：作品标题（书籍、歌曲、电影、电视节目、绘画、雕塑）
+            2. dfn：特殊术语，或专属名词
+            3. del与ins：删除的文本【与】插入的文本
+            4. sub与sup：下标文字【与】上标文字
+            5. code：一段代码
+            6. samp：从正常的上下文中，将某些内容提取出来，例如：标识设备输出
+            7. kbd：键盘文本，表示文本是通过键盘输入的，经常用在与计算机相关的手册中
+            8. abbr：缩写，最好配合上 title 属性
+            9. bdo：更改文本方向，要配合 dir 属性，可选值：ltr（默认值）、rtl
+            10. var：标记变量，可以与 code 标签一起使用
+            11. small：附属规则，例如包括：版权、法律文本 -- 很少使用
+            12. b：摘要中的关键字、评论中的产品名称 -- 很少使用
+            13. i：本意是：人物的思想活动、所说的话等等。现在多用于：呈现字体图标（后面要讲的内容）
+            14：u：与正常内容有反差文本，例如：错的单词、不合适的描述等 -- 很少使用
+            15. q：短引用 -- 很少使用
+            16. blockquote：长引用 -- 很少使用
+            17. address：地址信息
+    -->
+    <p>
+        <del>Hello</del>
+        <code>print('Hello World')</code>
+        H<sub>2</sub>O
+        2<sup>3</sup>
+    </p>
+    <!-- 
+        备注：
+            1. 这些不常用的文本标签，编码时不用过于纠结，酌情而定，不用也没关系
+            2. blockquote 与 address 是块级元素，其它的文本标签都是行内元素
+            3. 有些语义感不强的标签，例如：small b u q blockquote 很少使用
+            4. HTML 标签太多了，只需要记住那些语义感强的！重要的！即可：h1~h6 p em strong span
+    -->
+</body>
+
+</html>
