@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="wikiSearch(event)">
+        <input type="text" id="wikiSearch">
+        <button type="submit">去维基搜索</button>
+    </form>
+    <iframe id="container" frameborder="0" width="900" height="300"></iframe>
+</body>
+<script>
+    function wikiSearch(event) {
+        event.preventDefault();
+        const keyword = document.getElementById("wikiSearch").value;
+        document.getElementById("container").src = `https://en.wikipedia.org/wiki/${encodeURIComponent(keyword)}`;
+    }
+</script>
+
+</html>
