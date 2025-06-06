@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 表单：收集用户数据的工具 -->
+    <!-- HTML 表单默认是 ?key=value 其中 name 决定的就是 key 属性名 -->
+    <form action="https://www.google.com/search" method="get">
+        <input type="text" name="q">
+        <button type="submit">去谷歌搜索</button>
+    </form>
+    <!-- HTML 默认就是采用 GET 方式，并且默认拼接为 ?key=value，有两种方式，一种是使用 JS 另外一种就是使用维基的搜索页不过这种方式试过不行 -->
+    <form action="https://www.wikipedia.org/wiki/w/index.php" method="get">
+        <input type="text" name="search">
+        <button type="submit">去维基搜索1</button>
+    </form>
+    <!-- 采用 JS 方式用维基百科搜索输入框内容 - onsubmit 事件处理器 -->
+    <form onsubmit="searchWikipedia(event)">
+        <input type="text" id="wikiSearch">
+        <button type="submit">去维基搜索2</button>
+    </form>
+    <form action="https://www.google.com/search" method="get">
+        <!-- label 标签中的 for 关联 id 或者直接嵌套-->
+        <!-- fieldset legend 包裹，了解即可 -->
+        <fieldset>
+            <legend>主要信息</legend>
+            <label for="account">账户：</label>
+            <input type="text" id="account" name="q" value="zhangsan" maxlength="10"><br>
+            <label>
+                密码：
+                <input type="password" name="pwd" value="123" maxlength="6"><br>
+            </label>
+            性别：
+            <input type="radio" name="gender" value="male" id="male"><label for="male">男</label>
+            <label>
+                <input type="radio" name="gender" value="female">女
+            </label>
+            <br>
+        </fieldset>
+        <fieldset>
+            <legend>附加信息</legend>
+            爱好：
+            <label>
+                足球<input type="checkbox" name="hobby" value="soccer">
+            </label>
+            <label>
+                电影<input type="checkbox" name="hobby" value="movie">
+            </label>
+            <label>
+                旅游<input type="checkbox" name="hobby" value="travel"><br>
+            </label>
+            <label>
+                其它：<textarea name="other" rows="3" cols="23"></textarea><br>
+            </label>
+            籍贯：
+            <select name="place">
+                <option value="Beijing">北京</option>
+                <option value="Shanghai">上海</option>
+                <option value="Guangdong">广东</option>
+                <option value="Guangxi">广西</option>
+                <option value="Fujian">福建</option>
+                <option value="Sichuan">四川</option>
+                <option value="Hongkong" selected>香港</option>
+            </select><br>
+        </fieldset>
+        <button type="submit">确认</button>
+        <button type="reset">重置</button>
+        <button type="button">检查账户是否被注册</button>
+    </form>
+</body>
+<script>
+    function searchWikipedia(event) {
+        event.preventDefault(); // 阻止默认表单提交
+        const keyword = document.getElementById("wikiSearch").value;
+        window.location.href = `https://wikipedia.org/wiki/${encodeURIComponent(keyword)}`
+    }
+</script>
+
+</html>
